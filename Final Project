@@ -1,0 +1,46 @@
+from tkinter import *
+root = Tk()
+root.title("The Gamers Lounge    by Tabetha Pifer")
+root.geometry("700x500")
+root.configure(background='light blue')
+
+
+
+# Creating Labels and text boxes
+lblProgramName=Label(root,text="The Gamers Lounge", bg="light blue", fg="white", font="none 28 bold").grid(row=1, column=0,sticky=N)
+lblFirstName=Label(root,text="First Name:",bg="light blue",fg="black",font="none 18").grid(row=2,column=0,sticky=W)
+textFirstName=Entry(root,width=50,borderwidth=3,justify=LEFT)
+textFirstName.grid(row=2,column=1)
+lblLastName=Label(root,text="Last Name:",bg="light blue",fg="black",font="none 18").grid(row=3,column=0,sticky=W)
+textLastName=Entry(root,width=50,borderwidth=3,justify=LEFT)
+textLastName.grid(row=3,column=1)
+lblPhone=Label(root,text="Phone Number:",bg="light blue",fg="black",font="none 18").grid(row=4,column=0,sticky=W)
+textPhone=Entry(root,width=50,borderwidth=3,justify=LEFT)
+textPhone.grid(row=4,column=1)
+lblEmail=Label(root,text="Email Address:",bg="light blue",fg="black",font="none 18").grid(row=5,column=0,sticky=W)
+textEmail=Entry(root,width=50,borderwidth=3,justify=LEFT)
+textEmail.grid(row=5,column=1)
+lblOptions=Label(root,text="Game Selection", bg="light blue", fg="white", font="none 24 bold").grid(row=6,column=0,sticky=W)
+# Creating check buttons
+check_button1=Checkbutton(root,text="Playstation",bg="light blue", font="none 18").grid(row=7,column=0, sticky=W)
+check_button2=Checkbutton(root,text="Xbox",bg="light blue", font="none 18").grid(row=8,column=0, sticky=W)
+check_button3=Checkbutton(root,text="Nintendo",bg="light blue", font="none 18").grid(row=9,column=0, sticky=W)
+check_button4=Checkbutton(root,text="PC",bg="light blue", font="none 18").grid(row=10,column=0, sticky=W)
+# Creating my buttons
+btnClear=Button(root,text="Clear", height=2, width=9, command=lambda: clearForm())
+btnClear.grid(row=11,column=0)
+btnNext=Button(root,text="Next Page",height=2, width=9)
+btnNext.grid(row=11,column=1)
+btnExit=Button(root,text="Exit",height=2, width=9)
+btnExit.grid(row=12,column=0)
+# Clearing the Form
+lblAlert=Label(root,text="Form Cleared!")
+def clearForm():
+    textFirstName.delete(0,END)
+    textLastName.delete(0,END)
+    textPhone.delete(0,END)
+    textEmail.delete(0,END)
+    lblAlert.grid(row=13, column=1)
+
+
+root.mainloop() 
